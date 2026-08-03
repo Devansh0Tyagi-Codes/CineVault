@@ -1,0 +1,160 @@
+/* ===========================
+   Google Font
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* ===========================
+   Universal Selector
+=========================== */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* ===========================
+   Body
+=========================== */
+
+body{
+    background-color: #0F0F0F;
+}
+
+
+/* ===========================
+   Header
+=========================== */
+
+header{
+
+    width:100%;
+
+    height:80px;
+
+    background:#181818;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 80px;
+
+    border-bottom:1px solid #2b2b2b;
+
+}
+
+
+/* ===========================
+   Logo Section
+=========================== */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+/* Movie Icon */
+
+.logo i{
+
+    color:#E50914;
+
+    font-size:30px;
+
+}
+
+
+/* Website Name */
+
+.logo h2{
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:600;
+
+}
+
+
+/* ===========================
+   Navigation
+=========================== */
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:40px;
+
+}
+
+
+nav ul li a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:17px;
+
+    transition:.3s;
+
+}
+
+
+/* Hover Effect */
+
+nav ul li a:hover{
+
+    color:#E50914;
+
+}
+
+
+/* ===========================
+   Right Side Icons
+=========================== */
+
+.nav-icons{
+
+    display:flex;
+
+    gap:25px;
+
+}
+
+
+.nav-icons i{
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.nav-icons i:hover{
+
+    color:#E50914;
+
+}
