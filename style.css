@@ -158,3 +158,141 @@ nav ul li a:hover{
     color:#E50914;
 
 }
+
+/* ===========================
+   HERO SECTION
+=========================== */
+
+.hero{
+
+    height:90vh;
+
+    background:linear-gradient(rgba(0,0,0,0.75),
+    rgba(0,0,0,0.75)),
+    url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1600");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 80px;
+
+}
+
+
+/* ===========================
+   Hero Content
+=========================== */
+
+.hero-content{
+
+    max-width:700px;
+
+}
+
+
+/* Main Heading */
+
+.hero-content h1{
+
+    color:white;
+
+    font-size:60px;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+}
+
+
+/* Description */
+
+.hero-content p{
+
+    color:#cfcfcf;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+
+/* ===========================
+   Buttons
+=========================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+
+/* Primary Button */
+
+.btn-primary{
+
+    background:#E50914;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px 35px;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+
+/* Hover */
+
+.btn-primary:hover{
+
+    background:#ff1f2d;
+
+}
+
+
+/* Secondary Button */
+
+.btn-secondary{
+
+    border:2px solid white;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px 35px;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+
+.btn-secondary:hover{
+
+    background:white;
+
+    color:black;
+
+}
