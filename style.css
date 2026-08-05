@@ -296,3 +296,51 @@ nav ul li a:hover{
     color:black;
 
 }
+
+/* ==========================
+   TRENDING MOVIES SECTION
+========================== */
+
+.trending{
+
+    padding:80px 8%;
+
+    background:#111111;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+}
+
+.section-title h2{
+
+    color:white;
+
+    font-size:38px;
+
+    margin-bottom:10px;
+
+}
+
+.section-title p{
+
+    color:#b3b3b3;
+
+    font-size:18px;
+
+}
+
+.movie-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
