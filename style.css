@@ -402,3 +402,21 @@ nav ul li a:hover{
     box-shadow:0 15px 35px rgba(229,9,20,0.35);
 
 }
+
+.movie-card img{
+
+    transition:.4s;
+
+}
+
+.movie-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.movie-card:hover h3{
+
+    color:#E50914;
+
+}
