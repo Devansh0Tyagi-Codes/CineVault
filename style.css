@@ -2,433 +2,362 @@
    Google Font
 =========================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 /* ===========================
    Universal Selector
 =========================== */
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
 }
-
 
 /* ===========================
    Body
 =========================== */
 
-body{
-    background-color: #0F0F0F;
+body {
+  background-color: #0f0f0f;
 }
-
 
 /* ===========================
    Header
 =========================== */
 
-header{
+header {
+  width: 100%;
 
-    width:100%;
+  height: 80px;
 
-    height:80px;
+  background: #181818;
 
-    background:#181818;
+  display: flex;
 
-    display:flex;
+  justify-content: space-between;
 
-    justify-content:space-between;
+  align-items: center;
 
-    align-items:center;
+  padding: 0 80px;
 
-    padding:0 80px;
-
-    border-bottom:1px solid #2b2b2b;
-
+  border-bottom: 1px solid #2b2b2b;
 }
-
 
 /* ===========================
    Logo Section
 =========================== */
 
-.logo{
+.logo {
+  display: flex;
 
-    display:flex;
+  align-items: center;
 
-    align-items:center;
-
-    gap:10px;
-
+  gap: 10px;
 }
-
 
 /* Movie Icon */
 
-.logo i{
+.logo i {
+  color: #e50914;
 
-    color:#E50914;
-
-    font-size:30px;
-
+  font-size: 30px;
 }
-
 
 /* Website Name */
 
-.logo h2{
+.logo h2 {
+  color: white;
 
-    color:white;
+  font-size: 28px;
 
-    font-size:28px;
-
-    font-weight:600;
-
+  font-weight: 600;
 }
-
 
 /* ===========================
    Navigation
 =========================== */
 
-nav ul{
+nav ul {
+  display: flex;
 
-    display:flex;
+  list-style: none;
 
-    list-style:none;
-
-    gap:40px;
-
+  gap: 40px;
 }
 
+nav ul li a {
+  text-decoration: none;
 
-nav ul li a{
+  color: white;
 
-    text-decoration:none;
+  font-size: 17px;
 
-    color:white;
-
-    font-size:17px;
-
-    transition:.3s;
-
+  transition: 0.3s;
 }
-
 
 /* Hover Effect */
 
-nav ul li a:hover{
-
-    color:#E50914;
-
+nav ul li a:hover {
+  color: #e50914;
 }
-
 
 /* ===========================
    Right Side Icons
 =========================== */
 
-.nav-icons{
+.nav-icons {
+  display: flex;
 
-    display:flex;
-
-    gap:25px;
-
+  gap: 25px;
 }
 
+.nav-icons i {
+  color: white;
 
-.nav-icons i{
+  font-size: 20px;
 
-    color:white;
+  cursor: pointer;
 
-    font-size:20px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
+  transition: 0.3s;
 }
 
-
-.nav-icons i:hover{
-
-    color:#E50914;
-
+.nav-icons i:hover {
+  color: #e50914;
 }
 
 /* ===========================
    HERO SECTION
 =========================== */
 
-.hero{
+.hero {
+  height: 90vh;
 
-    height:90vh;
-
-    background:linear-gradient(rgba(0,0,0,0.75),
-    rgba(0,0,0,0.75)),
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
     url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1600");
 
-    background-size:cover;
+  background-size: cover;
 
-    background-position:center;
+  background-position: center;
 
-    display:flex;
+  display: flex;
 
-    align-items:center;
+  align-items: center;
 
-    padding:0 80px;
-
+  padding: 0 80px;
 }
-
 
 /* ===========================
    Hero Content
 =========================== */
 
-.hero-content{
-
-    max-width:700px;
-
+.hero-content {
+  max-width: 700px;
 }
-
 
 /* Main Heading */
 
-.hero-content h1{
+.hero-content h1 {
+  color: white;
 
-    color:white;
+  font-size: 60px;
 
-    font-size:60px;
+  line-height: 1.2;
 
-    line-height:1.2;
+  margin-bottom: 20px;
 
-    margin-bottom:20px;
-
+  font-size: 68px;
+  font-weight: 800;
+  letter-spacing: -2px;
 }
-
 
 /* Description */
 
-.hero-content p{
+.hero-content p {
+  color: #cfcfcf;
 
-    color:#cfcfcf;
+  font-size: 20px;
 
-    font-size:20px;
+  line-height: 1.8;
 
-    line-height:1.8;
-
-    margin-bottom:35px;
-
+  margin-bottom: 35px;
 }
-
 
 /* ===========================
    Buttons
 =========================== */
 
-.hero-buttons{
+.hero-buttons {
+  display: flex;
 
-    display:flex;
-
-    gap:20px;
-
+  gap: 20px;
 }
-
 
 /* Primary Button */
 
-.btn-primary{
+.btn-primary {
+  background: #e50914;
 
-    background:#E50914;
+  color: white;
 
-    color:white;
+  text-decoration: none;
 
-    text-decoration:none;
+  padding: 15px 35px;
 
-    padding:15px 35px;
+  border-radius: 8px;
 
-    border-radius:8px;
+  font-size: 18px;
 
-    font-size:18px;
-
-    transition:.3s;
-
+  transition: 0.3s;
 }
-
 
 /* Hover */
 
-.btn-primary:hover{
-
-    background:#ff1f2d;
-
+.btn-primary:hover {
+  background: #ff1f2d;
 }
-
 
 /* Secondary Button */
 
-.btn-secondary{
+.btn-secondary {
+  border: 2px solid white;
 
-    border:2px solid white;
+  color: white;
 
-    color:white;
+  text-decoration: none;
 
-    text-decoration:none;
+  padding: 15px 35px;
 
-    padding:15px 35px;
+  border-radius: 8px;
 
-    border-radius:8px;
+  font-size: 18px;
 
-    font-size:18px;
-
-    transition:.3s;
-
+  transition: 0.3s;
 }
 
+.btn-secondary:hover {
+  background: white;
 
-.btn-secondary:hover{
-
-    background:white;
-
-    color:black;
-
+  color: black;
 }
 
 /* ==========================
    TRENDING MOVIES SECTION
 ========================== */
 
-.trending{
+.trending {
+  padding: 80px 8%;
 
-    padding:80px 8%;
-
-    background:#111111;
-
+  background: #111111;
 }
 
-.section-title{
+.section-title {
+  text-align: center;
 
-    text-align:center;
-
-    margin-bottom:50px;
-
+  margin-bottom: 50px;
 }
 
 .section-title h2{
 
     color:white;
 
-    font-size:38px;
+    font-size:42px;
 
-    margin-bottom:10px;
+    font-weight:700;
 
-}
+    letter-spacing:-1px;
 
-.section-title p{
-
-    color:#b3b3b3;
-
-    font-size:18px;
+    margin-bottom:12px;
 
 }
 
-.movie-container{
+.section-title p {
+  color: #b3b3b3;
 
-    display:grid;
+  font-size: 18px;
+}
 
-    grid-template-columns:repeat(4,1fr);
+.movie-container {
+  display: grid;
 
-    gap:30px;
+  grid-template-columns: repeat(4, 1fr);
 
-}/* ==========================
+  gap: 30px;
+} /* ==========================
    MOVIE CARD
 ========================== */
-.movie-card{
+.movie-card {
+  background: rgba(255, 255, 255, 0.05);
 
-    background:rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
 
-    backdrop-filter:blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
-    border:1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
 
-    border-radius:18px;
+  overflow: hidden;
 
-    overflow:hidden;
+  cursor: pointer;
 
-    cursor:pointer;
-
-    transition:.4s ease;
-
+  transition: 0.4s ease;
 }
-.movie-card img{
+.movie-card img {
+  width: 100%;
 
-    width:100%;
+  height: 320px;
 
-    height:320px;
+  object-fit: cover;
 
-    object-fit:cover;
+  transition: 0.5s ease;
 
-    transition:0.5s ease;
-
-    filter:brightness(0.85);
-
+  filter: brightness(0.85);
 }
 
-.movie-card h3{
+.movie-card h3 {
+  color: white;
 
-    color:white;
+  font-size: 22px;
 
-    font-size:22px;
+  margin: 15px;
 
-    margin:15px;
-
+  font-weight:600;
+letter-spacing:-0.5px;
 }
 
-.movie-card p{
+.movie-card p {
+  color: #d1d1d1;
 
-    color:#d1d1d1;
+  margin: 8px 15px;
 
-    margin:8px 15px;
-
-    font-size:16px;
-
+  font-size: 16px;
 }
 
 /* ==========================
    MOVIE CARD HOVER EFFECT
 ========================== */
 
-.movie-card:hover{
+.movie-card:hover {
+  transform: translateY(-15px) scale(1.03);
 
-    transform:translateY(-15px) scale(1.03);
+  border: 1px solid #e50914;
 
-    border:1px solid #E50914;
-
-    box-shadow:
-    0 15px 40px rgba(229,9,20,0.35),
-    0 0 25px rgba(229,9,20,0.15);
-
+  box-shadow:
+    0 15px 40px rgba(229, 9, 20, 0.35),
+    0 0 25px rgba(229, 9, 20, 0.15);
 }
 
-.movie-card img{
-
-    transition:.4s;
-
+.movie-card img {
+  transition: 0.4s;
 }
 
-.movie-card:hover img{
+.movie-card:hover img {
+  transform: scale(1.08);
 
-    transform:scale(1.08);
-
-    filter:brightness(1);
-
+  filter: brightness(1);
 }
 
-.movie-card:hover h3{
-
-    color:#E50914;
-
+.movie-card:hover h3 {
+  color: #e50914;
 }
