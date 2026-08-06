@@ -243,16 +243,6 @@ nav ul li a:hover {
   color: black;
 }
 
-/* ==========================
-   TRENDING MOVIES SECTION
-========================== */
-
-.trending {
-  padding: 80px 8%;
-
-  background: #111111;
-}
-
 .section-title {
   text-align: center;
 
@@ -279,12 +269,11 @@ nav ul li a:hover {
   font-size: 18px;
 }
 
-.movie-container {
-  display: grid;
-
-  grid-template-columns: repeat(4, 1fr);
-
-  gap: 30px;
+.movie-container{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    justify-items:center;
 } /* ==========================
    MOVIE CARD
 ========================== */
@@ -360,4 +349,9 @@ letter-spacing:-0.5px;
 
 .movie-card:hover h3 {
   color: #e50914;
+}
+
+section{
+    padding:80px 8%;
+    background:#111;
 }
