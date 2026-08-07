@@ -1,44 +1,88 @@
+// ======================================
+// CineVault JavaScript
+// ======================================
+
 console.log("CineVault Loaded 🚀");
 
+// ======================================
 // Variables
+// ======================================
 
 let websiteName = "CineVault";
-
 let totalMovies = 4;
-
 let totalWebShows = 4;
 
 console.log(websiteName);
-
 console.log(totalMovies);
-
 console.log(totalWebShows);
 
-// ==========================
-// DOM
-// ==========================
+// ======================================
+// DOM Selection
+// ======================================
 
-// Hero Section
+// ---------- Hero Section ----------
 
 const heroSection = document.querySelector(".hero");
-
 console.log(heroSection);
+
+// Change hero text color
 heroSection.style.color = "yellow";
 
-
+// ---------- Hero Heading ----------
 
 const heroHeading = document.querySelector(".hero-content h1");
-
 console.log(heroHeading);
+
+// Change heading text
 heroHeading.textContent = "Explore Movies & Web Shows 🍿";
 
+// ---------- Hero Paragraph ----------
+
 const heroPara = document.querySelector(".hero-content p");
+
+// Change paragraph text
 heroPara.textContent = "Find your next binge-worthy movie or web series.";
 
-const movieSection = document.querySelector(".trending");
+// ---------- Browse Movies Button ----------
 
+const browseBtn = document.querySelector("#browseBtn");
+console.log(browseBtn);
+
+// ======================================
+// Events
+// ======================================
+
+// Browse Button Click Event
+
+browseBtn.addEventListener("click", function (event) {
+  // Stop default link behaviour
+  event.preventDefault();
+
+  // Change Hero Heading
+  heroHeading.textContent = "Button Click Worked ✅";
+});
+
+// ---------- Theme Button ----------
+
+const themeBtn = document.querySelector("#themeBtn");
+console.log(themeBtn);
+
+// ======================================
+// Theme Button Click Event
+// ======================================
+
+themeBtn.addEventListener("click", function () {
+
+    console.log("Theme Button Clicked 🌙");
+
+});
+
+// ---------- Movie Section ----------
+
+const movieSection = document.querySelector(".trending");
 console.log(movieSection);
 
-const footer = document.querySelector("footer");
+// ---------- Footer ----------
 
+const footer = document.querySelector("footer");
 console.log(footer);
