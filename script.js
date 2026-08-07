@@ -16,29 +16,26 @@ console.log(websiteName);
 console.log(totalMovies);
 console.log(totalWebShows);
 
-
 // ======================================
 // Movies & Web Shows Data
 // ======================================
 
 const titles = [
+  "Interstellar",
 
-    "Interstellar",
+  "The Dark Knight",
 
-    "The Dark Knight",
+  "Inception",
 
-    "Inception",
+  "Parasite",
 
-    "Parasite",
+  "Breaking Bad",
 
-    "Breaking Bad",
+  "Stranger Things",
 
-    "Stranger Things",
+  "Money Heist",
 
-    "Money Heist",
-
-    "The Boys"
-
+  "The Boys",
 ];
 
 // ======================================
@@ -88,43 +85,40 @@ browseBtn.addEventListener("click", function (event) {
 });
 
 
-// ==========================
-// Search Button
-// ==========================
-
-searchBtn.addEventListener("click", function () {
-  let titleName = prompt("Search Movies or Web Shows");
-
-  if (titleName === "" || titleName === null) {
-    alert("Please enter a movie or web show name!");
-    return;
-  }
-
-  // Convert input to lowercase
-  titleName = titleName.toLowerCase();
-
-  // Convert all titles to lowercase
-  const lowerTitles = titles.map(function (title) {
-    return title.toLowerCase();
-  });
-
-  if (lowerTitles.includes(titleName)) {
-    heroHeading.textContent = "🔍 Searching for " + titleName;
-
-    heroPara.textContent =
-      "Exploring movies and web shows related to " + titleName;
-  } else {
-    heroHeading.textContent = "❌ Movie or Web Show Not Found";
-
-    heroPara.textContent = "Try searching for another title.";
-  }
-});
-
 
 // ---------- Movie Section ----------
 
 const movieSection = document.querySelector(".trending");
 console.log(movieSection);
+
+// ==========================
+// Movie Cards
+// ==========================
+
+const movieCards = document.querySelectorAll(".movie-card");
+console.log(movieCards);
+console.log(movieCards.length);
+
+const searchInput = document.querySelector("#searchInput");
+console.log(searchInput);
+
+searchInput.addEventListener("keyup", function () {
+  console.log("Typing...");
+
+  let searchValue = searchInput.value.toLowerCase();
+
+  movieCards.forEach(function (card) {
+    let title = card.querySelector("h3").textContent.toLowerCase();
+
+    console.log(title);
+
+    if (title.includes(searchValue)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
 
 // ---------- Footer ----------
 
