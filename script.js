@@ -97,17 +97,27 @@ searchBtn.addEventListener("click", function () {
 
   if (titleName === "" || titleName === null) {
     alert("Please enter a movie or web show name!");
-
     return;
   }
 
-  heroHeading.textContent = "Searching for " + titleName + " 🔍";
+  // Convert input to lowercase
+  titleName = titleName.toLowerCase();
 
-  heroPara.textContent = "Showing results for " + titleName;
+  // Convert all titles to lowercase
+  const lowerTitles = titles.map(function (title) {
+    return title.toLowerCase();
+  });
 
-  console.log(titleName);
-  console.log(typeof titleName);
-  console.log(titleName.length);
+  if (lowerTitles.includes(titleName)) {
+    heroHeading.textContent = "🔍 Searching for " + titleName;
+
+    heroPara.textContent =
+      "Exploring movies and web shows related to " + titleName;
+  } else {
+    heroHeading.textContent = "❌ Movie or Web Show Not Found";
+
+    heroPara.textContent = "Try searching for another title.";
+  }
 });
 
 
