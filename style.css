@@ -107,10 +107,10 @@ nav ul li a:hover {
    Right Side Icons
 =========================== */
 
-.nav-icons {
-  display: flex;
-
-  gap: 25px;
+.nav-icons{
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .nav-icons i {
