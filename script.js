@@ -62,20 +62,7 @@ browseBtn.addEventListener("click", function (event) {
   heroHeading.textContent = "Button Click Worked ✅";
 });
 
-// ---------- Theme Button ----------
 
-const themeBtn = document.querySelector("#themeBtn");
-console.log(themeBtn);
-
-// ======================================
-// Theme Button Click Event
-// ======================================
-
-themeBtn.addEventListener("click", function () {
-
-    console.log("Theme Button Clicked 🌙");
-
-});
 
 // ---------- Movie Section ----------
 
