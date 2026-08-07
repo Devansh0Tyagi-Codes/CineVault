@@ -16,6 +16,9 @@ console.log(websiteName);
 console.log(totalMovies);
 console.log(totalWebShows);
 
+
+
+
 // ======================================
 // DOM Selection
 // ======================================
@@ -62,6 +65,28 @@ browseBtn.addEventListener("click", function (event) {
   heroHeading.textContent = "Button Click Worked ✅";
 });
 
+
+// ==========================
+// Search Button
+// ==========================
+
+searchBtn.addEventListener("click", function () {
+  let titleName = prompt("Search Movies or Web Shows");
+
+  if (titleName === "" || titleName === null) {
+    alert("Please enter a movie or web show name!");
+
+    return;
+  }
+
+  heroHeading.textContent = "Searching for " + titleName + " 🔍";
+
+  heroPara.textContent = "Showing results for " + titleName;
+
+  console.log(titleName);
+  console.log(typeof titleName);
+  console.log(titleName.length);
+});
 
 
 // ---------- Movie Section ----------
