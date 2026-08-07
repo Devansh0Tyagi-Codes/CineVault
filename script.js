@@ -17,7 +17,29 @@ console.log(totalMovies);
 console.log(totalWebShows);
 
 
+// ======================================
+// Movies & Web Shows Data
+// ======================================
 
+const titles = [
+
+    "Interstellar",
+
+    "The Dark Knight",
+
+    "Inception",
+
+    "Parasite",
+
+    "Breaking Bad",
+
+    "Stranger Things",
+
+    "Money Heist",
+
+    "The Boys"
+
+];
 
 // ======================================
 // DOM Selection
