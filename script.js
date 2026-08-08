@@ -171,6 +171,26 @@ searchInput.addEventListener("keyup", function () {
   });
 });
 
+// ==========================
+// Favorite Button
+// ==========================
+
+const favoriteBtn = document.querySelector(".favorite-btn");
+
+favoriteBtn.addEventListener("click", function () {
+
+  event.stopPropagation();
+
+    if (favoriteBtn.textContent === "♡") {
+        favoriteBtn.textContent = "♥";
+        favoriteBtn.style.color = "#e50914";
+    } else {
+        favoriteBtn.textContent = "♡";
+        favoriteBtn.style.color = "white";
+    }
+
+});
+
 // ---------- Footer ----------
 
 const footer = document.querySelector("footer");
