@@ -77,13 +77,10 @@ console.log(browseBtn);
 // Browse Button Click Event
 
 browseBtn.addEventListener("click", function (event) {
-  // Stop default link behaviour
   event.preventDefault();
 
-  // Change Hero Heading
-  heroHeading.textContent = "Button Click Worked ✅";
+  searchInput.focus();
 });
-
 
 
 // ---------- Movie Section ----------
@@ -172,24 +169,51 @@ searchInput.addEventListener("keyup", function () {
 });
 
 // ==========================
-// Favorite Buttons
+// Favorite Buttons + LocalStorage
 // ==========================
+
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
 const favoriteBtns = document.querySelectorAll(".favorite-btn");
 
 favoriteBtns.forEach(function (button) {
 
+    const card = button.closest(".movie-card");
+    const movieTitle = card.querySelector("h3").textContent;
+
+    if (favorites.includes(movieTitle)) {
+      button.textContent = "♥";
+      button.style.color = "#e50914";
+    }
+    
     button.addEventListener("click", function (event) {
 
         event.stopPropagation();
 
         if (button.textContent === "♡") {
+
             button.textContent = "♥";
             button.style.color = "#e50914";
+
+            favorites.push(movieTitle);
+
         } else {
+
             button.textContent = "♡";
             button.style.color = "white";
+
+            favorites = favorites.filter(function (title) {
+                return title !== movieTitle;
+            });
+
         }
+
+        localStorage.setItem(
+            "favorites",
+            JSON.stringify(favorites)
+        );
+
+        console.log("Favorites:", favorites);
 
     });
 
