@@ -172,22 +172,26 @@ searchInput.addEventListener("keyup", function () {
 });
 
 // ==========================
-// Favorite Button
+// Favorite Buttons
 // ==========================
 
-const favoriteBtn = document.querySelector(".favorite-btn");
+const favoriteBtns = document.querySelectorAll(".favorite-btn");
 
-favoriteBtn.addEventListener("click", function () {
+favoriteBtns.forEach(function (button) {
 
-  event.stopPropagation();
+    button.addEventListener("click", function (event) {
 
-    if (favoriteBtn.textContent === "♡") {
-        favoriteBtn.textContent = "♥";
-        favoriteBtn.style.color = "#e50914";
-    } else {
-        favoriteBtn.textContent = "♡";
-        favoriteBtn.style.color = "white";
-    }
+        event.stopPropagation();
+
+        if (button.textContent === "♡") {
+            button.textContent = "♥";
+            button.style.color = "#e50914";
+        } else {
+            button.textContent = "♡";
+            button.style.color = "white";
+        }
+
+    });
 
 });
 
