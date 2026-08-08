@@ -219,6 +219,22 @@ favoriteBtns.forEach(function (button) {
 
 });
 
+
+// ==========================
+// Top Rated Button
+// ==========================
+
+const topRatedBtn = document.querySelector("#topRatedBtn");
+const recommendedSection = document.querySelector("#recommended");
+
+topRatedBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    recommendedSection.scrollIntoView({
+        behavior: "smooth"
+    });
+});
+
 // ---------- Footer ----------
 
 const footer = document.querySelector("footer");
