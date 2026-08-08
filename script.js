@@ -96,6 +96,57 @@ console.log(movieSection);
 // ==========================
 
 const movieCards = document.querySelectorAll(".movie-card");
+// ==========================
+// Movie Card Click
+// ==========================
+
+const movieModal = document.querySelector("#movieModal");
+
+const closeModal = document.querySelector("#closeModal");
+
+// ==========================
+// Close Movie Modal
+// ==========================
+
+closeModal.addEventListener("click", function () {
+
+    movieModal.style.display = "none";
+
+});
+
+const modalPoster = document.querySelector("#modalPoster");
+
+const modalTitle = document.querySelector("#modalTitle");
+
+const modalRating = document.querySelector("#modalRating");
+
+const modalGenre = document.querySelector("#modalGenre");
+
+const modalYear = document.querySelector("#modalYear");
+
+const modalDescription = document.querySelector("#modalDescription");
+
+movieCards.forEach(function (card) {
+  card.addEventListener("click", function () {
+    // Get movie information from card
+    const title = card.querySelector("h3").textContent;
+    const poster = card.querySelector("img").src;
+
+    // Open modal
+    movieModal.style.display = "flex";
+
+    // Put card data inside modal
+    modalTitle.textContent = title;
+    modalPoster.src = poster;
+
+    // Temporary details
+    modalRating.textContent = "⭐ IMDb: 8.5";
+    modalGenre.textContent = "🎭 Genre: Movie / Web Series";
+    modalYear.textContent = "📅 Year: 2024";
+    modalDescription.textContent =
+      "Explore this movie or web series and discover more details.";
+  });
+});
 console.log(movieCards);
 console.log(movieCards.length);
 
