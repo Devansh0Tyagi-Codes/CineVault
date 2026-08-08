@@ -550,26 +550,32 @@ section {
         FOOTER
 ========================== */
 
-footer{
-    
-    padding:40px 8% 25px;
+footer {
+    width: 100%;
+    background: rgba(17, 19, 21, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.footer-container{
+.footer-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
 
-    display:flex;
+    padding: 50px 80px 20px;
+    box-sizing: border-box;
 
-    justify-content:space-between;
-
-    align-items:flex-start;
-
-    gap:50px;
-
-    flex-wrap:wrap;
-
-    max-width:1400px;
-margin:auto;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    flex-wrap: wrap;
 }
 
 .footer-about{
