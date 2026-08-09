@@ -685,18 +685,149 @@ body::before {
 
     z-index: -1;
 }
-
-.favorite-btn {
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 28px;
-    cursor: pointer;
-    margin: 0 15px 10px;
-    transition: 0.3s;
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin: 15px;
 }
 
+.favorite-btn,
+.watched-btn {
+    flex: 1;
+    height: 48px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+
+    color: #ddd;
+
+    font-family: "Outfit", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+/* Favorite hover */
 .favorite-btn:hover {
     color: #e50914;
-    transform: scale(1.2);
+    border-color: #e50914;
+    background: rgba(229, 9, 20, 0.08);
+}
+
+/* Watched hover */
+.watched-btn:hover {
+    color: #4caf50;
+    border-color: #4caf50;
+    background: rgba(76, 175, 80, 0.08);
+}
+
+.favorite-btn .heart-icon {
+    color: #ddd;
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+
+.favorite-btn:hover .heart-icon {
+    color: #e50914;
+    transform: scale(1.15);
+}
+
+.favorite-btn.active .heart-icon {
+    color: #e50914;
+}
+
+/* Active Watched */
+.watched-btn.active {
+    color: #4caf50;
+    border-color: #4caf50;
+    background: rgba(76, 175, 80, 0.10);
+}
+
+
+
+/* ==========================
+   FAVORITE BUTTON FIX
+========================== */
+
+.favorite-btn {
+    color: #ddd !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+}
+
+.favorite-btn.active {
+    color: #ddd !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+}
+
+.favorite-btn .heart-icon {
+    color: #ddd;
+}
+
+.favorite-btn.active .heart-icon {
+    color: #e50914;
+}
+
+/* ==========================
+   FAVORITE BUTTON
+========================== */
+
+.favorite-btn {
+    color: #ddd !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.favorite-btn .heart-icon {
+    color: #ddd;
+    transition: 0.3s ease;
+}
+
+.favorite-btn:hover .heart-icon {
+    color: #e50914;
+    transform: scale(1.15);
+}
+
+.favorite-btn.active .heart-icon {
+    color: #e50914 !important;
+}
+
+/* Active button ka border red NAHI hoga */
+.favorite-btn.active {
+    color: #ddd !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* ==========================
+   ACTION BUTTON HOVER
+========================== */
+
+/* Favorite - Red Theme */
+.favorite-btn:hover {
+    color: #e50914 !important;
+    border-color: #e50914 !important;
+    background: rgba(229, 9, 20, 0.08) !important;
+}
+
+.favorite-btn:hover .heart-icon {
+    color: #e50914 !important;
+}
+
+/* Watched - Green Theme */
+.watched-btn:hover {
+    color: #4caf50 !important;
+    border-color: #4caf50 !important;
+    background: rgba(76, 175, 80, 0.08) !important;
 }

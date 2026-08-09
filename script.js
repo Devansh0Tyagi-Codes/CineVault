@@ -166,9 +166,7 @@ searchInput.addEventListener("keyup", function () {
       card.style.display = "none";
     }
   });
-});
-
-// ==========================
+});// ==========================
 // Favorite Buttons + LocalStorage
 // ==========================
 
@@ -179,42 +177,40 @@ const favoriteBtns = document.querySelectorAll(".favorite-btn");
 favoriteBtns.forEach(function (button) {
 
     const card = button.closest(".movie-card");
-    const movieTitle = card.querySelector("h3").textContent;
+    const movieTitle = card.querySelector("h3").textContent.trim();
+    const heart = button.querySelector(".heart-icon");
 
+    // Check if already favorite
     if (favorites.includes(movieTitle)) {
-      button.textContent = "♥";
-      button.style.color = "#e50914";
+        heart.textContent = "♥";
+        heart.style.color = "#e50914";
     }
-    
+
     button.addEventListener("click", function (event) {
 
+        event.preventDefault();
         event.stopPropagation();
 
-        if (button.textContent === "♡") {
+        if (favorites.includes(movieTitle)) {
 
-            button.textContent = "♥";
-            button.style.color = "#e50914";
-
-            favorites.push(movieTitle);
-
-        } else {
-
-            button.textContent = "♡";
-            button.style.color = "white";
-
+            // Remove from favorites
             favorites = favorites.filter(function (title) {
                 return title !== movieTitle;
             });
 
+            heart.textContent = "♡";
+            heart.style.color = "#ddd";
+
+        } else {
+
+            // Add to favorites
+            favorites.push(movieTitle);
+
+            heart.textContent = "♥";
+            heart.style.color = "#e50914";
         }
 
-        localStorage.setItem(
-            "favorites",
-            JSON.stringify(favorites)
-        );
-
-        console.log("Favorites:", favorites);
-
+        localStorage.setItem("favorites", JSON.stringify(favorites));
     });
 
 });
