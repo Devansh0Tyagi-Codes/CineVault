@@ -261,6 +261,29 @@ watchedBtns.forEach(function (button) {
 
 });
 
+
+// ==========================
+// User Profile Toggle
+// ==========================
+
+const userIcon = document.getElementById("userIcon");
+const profilePanel = document.getElementById("profilePanel");
+
+userIcon.addEventListener("click", function (event) {
+
+    event.stopPropagation();
+
+    if (profilePanel.style.display === "block") {
+        profilePanel.style.display = "none";
+    } else {
+        profilePanel.style.display = "block";
+    }
+
+});
+
+document.addEventListener("click", function () {
+    profilePanel.style.display = "none";
+});
 // ==========================
 // Top Rated Button
 // ==========================
