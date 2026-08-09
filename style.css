@@ -831,3 +831,102 @@ body::before {
     border-color: #4caf50 !important;
     background: rgba(76, 175, 80, 0.08) !important;
 }
+
+
+/* ==========================
+   WATCHED BUTTON
+========================== */
+
+.watched-btn {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ddd;
+    border-radius: 8px;
+    padding: 10px 14px;
+    transition: 0.3s ease;
+}
+
+.watched-btn i {
+    margin-right: 8px;
+}
+
+/* Hover */
+.watched-btn:hover {
+    color: #4caf50 !important;
+    border-color: #4caf50 !important;
+    background: rgba(76, 175, 80, 0.08) !important;
+}
+
+/* Clicked / Watched */
+.watched-btn.watched-active {
+    color: #4caf50 !important;
+    border-color: #4caf50 !important;
+    background: rgba(76, 175, 80, 0.08) !important;
+}
+
+.watched-btn.watched-active i {
+    color: #4caf50 !important;
+}
+.watched-btn i {
+    margin-right: 10px;
+}
+
+/* ==========================
+   FINAL CARD ACTION BUTTONS
+========================== */
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin: 15px;
+}
+
+.favorite-btn,
+.watched-btn {
+    flex: 1;
+    padding: 10px 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: white;
+    font-size: 14px;
+    white-space: nowrap;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Icons */
+.favorite-btn i,
+.watched-btn i {
+    margin: 0;
+}
+
+/* Favorite */
+.favorite-btn:hover {
+    color: #e50914;
+    border-color: #e50914;
+}
+
+.favorite-btn.active {
+    color: #e50914;
+    border-color: #e50914;
+}
+
+/* Watched */
+.watched-btn:hover {
+    color: #4caf50;
+    border-color: #4caf50;
+}
+
+.watched-btn.active {
+    color: #4caf50;
+    border-color: #4caf50;
+}

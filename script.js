@@ -217,6 +217,51 @@ favoriteBtns.forEach(function (button) {
 
 
 // ==========================
+// Watched Buttons + LocalStorage
+// ==========================
+
+let watched = JSON.parse(localStorage.getItem("watched")) || [];
+
+const watchedBtns = document.querySelectorAll(".watched-btn");
+
+watchedBtns.forEach(function (button) {
+
+    const card = button.closest(".movie-card");
+    const movieTitle = card.querySelector("h3").textContent.trim();
+
+    // Check if already watched
+    if (watched.includes(movieTitle)) {
+        button.classList.add("watched-active");
+    }
+
+    button.addEventListener("click", function (event) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (watched.includes(movieTitle)) {
+
+            // Remove from watched
+            watched = watched.filter(function (title) {
+                return title !== movieTitle;
+            });
+
+            button.classList.remove("watched-active");
+
+        } else {
+
+            // Add to watched
+            watched.push(movieTitle);
+
+            button.classList.add("watched-active");
+        }
+
+        localStorage.setItem("watched", JSON.stringify(watched));
+    });
+
+});
+
+// ==========================
 // Top Rated Button
 // ==========================
 
