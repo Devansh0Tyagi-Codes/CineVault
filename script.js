@@ -281,8 +281,44 @@ userIcon.addEventListener("click", function (event) {
 
 });
 
+profilePanel.addEventListener("click", function (event) {
+    event.stopPropagation();
+});
+
+// Bahar click karne par panel close hoga
 document.addEventListener("click", function () {
     profilePanel.style.display = "none";
+});
+
+// ==========================
+// User Name + LocalStorage
+// ==========================
+
+const userNameInput = document.querySelector("#userNameInput");
+const saveNameBtn = document.querySelector("#saveNameBtn");
+const savedUserName = document.querySelector("#savedUserName");
+
+let savedName = localStorage.getItem("userName");
+
+if (savedName) {
+    savedUserName.textContent = savedName;
+    userNameInput.value = savedName;
+}
+
+saveNameBtn.addEventListener("click", function () {
+
+    const name = userNameInput.value.trim();
+
+    if (name === "") {
+        alert("Please enter your name!");
+        return;
+    }
+
+    localStorage.setItem("userName", name);
+
+    savedUserName.textContent = name;
+
+    userNameInput.value = "";
 });
 // ==========================
 // Top Rated Button
