@@ -289,7 +289,6 @@ profilePanel.addEventListener("click", function (event) {
 document.addEventListener("click", function () {
     profilePanel.style.display = "none";
 });
-
 // ==========================
 // User Name + LocalStorage
 // ==========================
@@ -298,13 +297,25 @@ const userNameInput = document.querySelector("#userNameInput");
 const saveNameBtn = document.querySelector("#saveNameBtn");
 const savedUserName = document.querySelector("#savedUserName");
 
+const nameSection = document.querySelector("#nameSection");
+const savedNameSection = document.querySelector("#savedNameSection");
+const resetNameBtn = document.querySelector("#resetNameBtn");
+
+const profileTitle = document.querySelector("#profileTitle");
 let savedName = localStorage.getItem("userName");
 
+
+// Show saved name
 if (savedName) {
-    savedUserName.textContent = savedName;
-    userNameInput.value = savedName;
+  profileTitle.textContent = savedName;
+
+  savedUserName.textContent = savedName;
+
+  nameSection.style.display = "none";
+  savedNameSection.style.display = "flex";
 }
 
+// Save name
 saveNameBtn.addEventListener("click", function () {
 
     const name = userNameInput.value.trim();
@@ -316,9 +327,29 @@ saveNameBtn.addEventListener("click", function () {
 
     localStorage.setItem("userName", name);
 
+    profileTitle.textContent = name;
+
     savedUserName.textContent = name;
 
+    nameSection.style.display = "none";
+    savedNameSection.style.display = "flex";
+
+});
+
+// Reset name
+resetNameBtn.addEventListener("click", function () {
+
+    localStorage.removeItem("userName");
+
+    profileTitle.textContent = "My Profile";
+
+    savedUserName.textContent = "";
+
+    nameSection.style.display = "flex";
+    savedNameSection.style.display = "none";
+
     userNameInput.value = "";
+
 });
 // ==========================
 // Top Rated Button

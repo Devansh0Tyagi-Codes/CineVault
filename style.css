@@ -1086,3 +1086,70 @@ body::before {
     font-size: 18px;
     margin-bottom: 12px;
 }
+
+
+/* Saved Name */
+
+.saved-name-section {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    margin-bottom: 15px;
+}
+
+.saved-name-section h3 {
+    color: white;
+    font-size: 18px;
+    margin: 0;
+}
+
+#resetNameBtn {
+    padding: 6px 10px;
+
+    background: transparent;
+    color: #aaa;
+
+    border: 1px solid #444;
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#resetNameBtn:hover {
+    color: #e50914;
+    border-color: #e50914;
+}
+
+.saved-name-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#savedUserName {
+    display: none;
+}
+
+#resetNameBtn {
+    padding: 8px 14px;
+    border: 1px solid #e50914;
+    border-radius: 8px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+#profileTitle {
+    color: white !important;
+    text-align: center;
+}
+
+#savedUserName {
+    color: white !important;
+}
