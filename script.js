@@ -123,26 +123,107 @@ const modalYear = document.querySelector("#modalYear");
 
 const modalDescription = document.querySelector("#modalDescription");
 
+// ==========================
+// Movie Details Data
+// ==========================
+
+const movieDetails = {
+
+    "Interstellar": {
+        rating: "⭐ IMDb: 8.7",
+        genre: "🎭 Genre: Sci-Fi / Adventure",
+        year: "📅 Year: 2014",
+        description: "A group of explorers travel through a wormhole in space in search of a new home for humanity."
+    },
+
+    "The Dark Knight": {
+        rating: "⭐ IMDb: 9.0",
+        genre: "🎭 Genre: Action / Crime",
+        year: "📅 Year: 2008",
+        description: "Batman faces the Joker, a criminal mastermind who creates chaos and pushes Gotham City to its limits."
+    },
+
+    "Inception": {
+        rating: "⭐ IMDb: 8.8",
+        genre: "🎭 Genre: Sci-Fi / Thriller",
+        year: "📅 Year: 2010",
+        description: "A skilled thief enters people's dreams to steal secrets and is given a difficult task involving an idea."
+    },
+
+    "Parasite": {
+        rating: "⭐ IMDb: 8.5",
+        genre: "🎭 Genre: Drama / Thriller",
+        year: "📅 Year: 2019",
+        description: "A struggling family slowly becomes connected with a wealthy household, leading to unexpected consequences."
+    },
+
+    "Breaking Bad": {
+        rating: "⭐ IMDb: 9.5",
+        genre: "🎭 Genre: Crime / Drama",
+        year: "📅 Year: 2008",
+        description: "A chemistry teacher turns to producing illegal drugs after receiving a life-changing diagnosis."
+    },
+
+    "Stranger Things": {
+        rating: "⭐ IMDb: 8.7",
+        genre: "🎭 Genre: Sci-Fi / Drama",
+        year: "📅 Year: 2016",
+        description: "A group of friends uncover mysterious supernatural events and secret experiments in their small town."
+    },
+
+    "Dark": {
+        rating: "⭐ IMDb: 8.7",
+        genre: "🎭 Genre: Sci-Fi / Mystery",
+        year: "📅 Year: 2017",
+        description: "The disappearance of a child reveals a mysterious connection between four families across different generations."
+    },
+
+    "Money Heist": {
+        rating: "⭐ IMDb: 8.2",
+        genre: "🎭 Genre: Crime / Thriller",
+        year: "📅 Year: 2017",
+        description: "A criminal mastermind known as the Professor plans a series of ambitious heists with a carefully selected team."
+    },
+
+    "The Boys": {
+        rating: "⭐ IMDb: 8.6",
+        genre: "🎭 Genre: Action / Superhero",
+        year: "📅 Year: 2019",
+        description: "A group of vigilantes takes on powerful superheroes who abuse their abilities and influence."
+    }
+
+};// ==========================
+// Movie Card Click
+// ==========================
+
 movieCards.forEach(function (card) {
-  card.addEventListener("click", function () {
-    // Get movie information from card
-    const title = card.querySelector("h3").textContent;
-    const poster = card.querySelector("img").src;
 
-    // Open modal
-    movieModal.style.display = "flex";
+    card.addEventListener("click", function () {
 
-    // Put card data inside modal
-    modalTitle.textContent = title;
-    modalPoster.src = poster;
+        // Get movie information from card
+        const title = card.querySelector("h3").textContent.trim();
+        const poster = card.querySelector("img").src;
 
-    // Temporary details
-    modalRating.textContent = "⭐ IMDb: 8.5";
-    modalGenre.textContent = "🎭 Genre: Movie / Web Series";
-    modalYear.textContent = "📅 Year: 2024";
-    modalDescription.textContent =
-      "Explore this movie or web series and discover more details.";
-  });
+        // Open modal
+        movieModal.style.display = "flex";
+
+        // Put card data inside modal
+        modalTitle.textContent = title;
+        modalPoster.src = poster;
+
+        // Get movie details
+        const details = movieDetails[title];
+
+        // Put correct details inside modal
+        if (details) {
+            modalRating.textContent = details.rating;
+            modalGenre.textContent = details.genre;
+            modalYear.textContent = details.year;
+            modalDescription.textContent = details.description;
+        }
+
+    });
+
 });
 console.log(movieCards);
 console.log(movieCards.length);
