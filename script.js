@@ -261,6 +261,80 @@ watchedBtns.forEach(function (button) {
 
 });
 
+// ==========================
+// Favorites / Watched Modal
+// ==========================
+
+const favoritesOption = document.querySelector("#favoritesOption");
+const watchedOption = document.querySelector("#watchedOption");
+
+const collectionModal = document.querySelector("#collectionModal");
+const closeCollection = document.querySelector("#closeCollection");
+const collectionTitle = document.querySelector("#collectionTitle");
+const collectionList = document.querySelector("#collectionList");
+
+
+// Show Collection Modal
+function showCollection(type) {
+
+    collectionList.innerHTML = "";
+
+    let collection = [];
+
+    if (type === "favorites") {
+        collection = favorites;
+        collectionTitle.textContent = "❤️ My Favorites";
+    } else {
+        collection = watched;
+        collectionTitle.textContent = "👁️ My Watched";
+    }
+
+    if (collection.length === 0) {
+
+        collectionList.innerHTML =
+            "<p class='empty-collection'>No movies added yet.</p>";
+
+    } else {
+
+        collection.forEach(function (title) {
+
+            const movie = document.createElement("div");
+
+            movie.classList.add("collection-item");
+
+            movie.textContent = title;
+
+            collectionList.appendChild(movie);
+        });
+    }
+
+    collectionModal.style.display = "flex";
+}
+
+
+// Favorites Click
+favoritesOption.addEventListener("click", function () {
+
+    showCollection("favorites");
+
+});
+
+
+// Watched Click
+watchedOption.addEventListener("click", function () {
+
+    showCollection("watched");
+
+});
+
+
+// Close Collection Modal
+closeCollection.addEventListener("click", function () {
+
+    collectionModal.style.display = "none";
+
+});
+
 
 // ==========================
 // User Profile Toggle
@@ -365,6 +439,8 @@ topRatedBtn.addEventListener("click", function (event) {
         behavior: "smooth"
     });
 });
+
+
 
 // ---------- Footer ----------
 

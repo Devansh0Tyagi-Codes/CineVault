@@ -96,9 +96,16 @@
 </div>
 
             <div class="profile-options">
-                <div>❤️ Favorites</div>
-                <div>👁️ Watched</div>
-            </div>
+
+    <div id="favoritesOption">
+        ❤️ Favorites
+    </div>
+
+    <div id="watchedOption">
+        👁️ Watched
+    </div>
+
+</div>
 
         </div>
 
@@ -464,6 +471,7 @@
 
 <div class="movie-modal" id="movieModal">
 
+    
     <div class="modal-content">
 
         <button class="close-modal" id="closeModal">&times;</button>
@@ -484,6 +492,31 @@
                 Movie description will appear here.
             </p>
 
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================
+     FAVORITES / WATCHED MODAL
+========================== -->
+
+<div class="collection-modal" id="collectionModal">
+
+    <div class="collection-content">
+
+        <button class="close-collection" id="closeCollection">
+            &times;
+        </button>
+
+        <h2 id="collectionTitle">
+            My Favorites
+        </h2>
+
+        <div id="collectionList">
+            <!-- Movies will appear here -->
         </div>
 
     </div>
