@@ -357,39 +357,53 @@ const collectionList = document.querySelector("#collectionList");
 
 // Show Collection Modal
 function showCollection(type) {
+  collectionList.innerHTML = "";
 
-    collectionList.innerHTML = "";
+  let collection = [];
 
-    let collection = [];
+  // User name save nahi hai to collection hide rakho
+  const currentUserName = localStorage.getItem("userName");
 
+  if (!currentUserName) {
     if (type === "favorites") {
-        collection = favorites;
-        collectionTitle.textContent = "❤️ My Favorites";
+      collectionTitle.textContent = "❤️ My Favorites";
     } else {
-        collection = watched;
-        collectionTitle.textContent = "👁️ My Watched";
+      collectionTitle.textContent = "👁️ My Watched";
     }
 
-    if (collection.length === 0) {
-
-        collectionList.innerHTML =
-            "<p class='empty-collection'>No movies added yet.</p>";
-
-    } else {
-
-        collection.forEach(function (title) {
-
-            const movie = document.createElement("div");
-
-            movie.classList.add("collection-item");
-
-            movie.textContent = title;
-
-            collectionList.appendChild(movie);
-        });
-    }
+    collectionList.innerHTML =
+      "<p class='empty-collection'>No " +
+      (type === "favorites" ? "favorites" : "watched") +
+      " yet.</p>";
 
     collectionModal.style.display = "flex";
+    return;
+  }
+
+  if (type === "favorites") {
+    collection = favorites;
+    collectionTitle.textContent = "❤️ My Favorites";
+  } else {
+    collection = watched;
+    collectionTitle.textContent = "👁️ My Watched";
+  }
+
+  if (collection.length === 0) {
+    collectionList.innerHTML =
+      "<p class='empty-collection'>No movies added yet.</p>";
+  } else {
+    collection.forEach(function (title) {
+      const movie = document.createElement("div");
+
+      movie.classList.add("collection-item");
+
+      movie.textContent = title;
+
+      collectionList.appendChild(movie);
+    });
+  }
+
+  collectionModal.style.display = "flex";
 }
 
 
