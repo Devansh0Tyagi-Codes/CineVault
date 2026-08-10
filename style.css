@@ -1287,3 +1287,30 @@ body::before {
 
     font-size: 16px;
 }
+
+/* ==========================
+   SEARCH NO RESULTS
+========================== */
+
+.no-results {
+    display: none;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 30px 10px;
+    margin: 20px 0;
+}
+
+/* Search empty messages - center inside each section */
+#noResults,
+#noWebResults,
+#noRecommendedResults {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 30px auto;
+    grid-column: 1 / -1;
+    flex: 0 0 100%;
+}

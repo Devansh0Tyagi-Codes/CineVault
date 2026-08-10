@@ -227,26 +227,139 @@ movieCards.forEach(function (card) {
 });
 console.log(movieCards);
 console.log(movieCards.length);
+// ==========================
+// Search Movies, Web Shows & Recommended
+// ==========================
 
 const searchInput = document.querySelector("#searchInput");
-console.log(searchInput);
+
+const noResults = document.querySelector("#noResults");
+const noWebResults = document.querySelector("#noWebResults");
+const noRecommendedResults = document.querySelector("#noRecommendedResults");
+
+const movieSectionCards = document.querySelectorAll(".trending .movie-card");
+const webShowCards = document.querySelectorAll(".webshows .movie-card");
+const recommendedCards = document.querySelectorAll(".recommended .movie-card");
+
 
 searchInput.addEventListener("keyup", function () {
-  console.log("Typing...");
 
-  let searchValue = searchInput.value.toLowerCase();
+    const searchValue = searchInput.value.toLowerCase().trim();
 
-  movieCards.forEach(function (card) {
-    let title = card.querySelector("h3").textContent.toLowerCase();
 
-    console.log(title);
+    // ==========================
+    // TRENDING MOVIES
+    // ==========================
 
-    if (title.includes(searchValue)) {
-      card.style.display = "block";
+    let movieFound = false;
+
+    movieSectionCards.forEach(function (card) {
+
+        const title = card.querySelector("h3")
+            .textContent
+            .toLowerCase()
+            .trim();
+
+        if (searchValue === "" || title.includes(searchValue)) {
+
+            card.style.display = "";
+
+            if (searchValue !== "") {
+                movieFound = true;
+            }
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+    // ==========================
+    // WEB SHOWS
+    // ==========================
+
+    let webFound = false;
+
+    webShowCards.forEach(function (card) {
+
+        const title = card.querySelector("h3")
+            .textContent
+            .toLowerCase()
+            .trim();
+
+        if (searchValue === "" || title.includes(searchValue)) {
+
+            card.style.display = "";
+
+            if (searchValue !== "") {
+                webFound = true;
+            }
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+    // ==========================
+    // RECOMMENDED
+    // ==========================
+
+    let recommendedFound = false;
+
+    recommendedCards.forEach(function (card) {
+
+        const title = card.querySelector("h3")
+            .textContent
+            .toLowerCase()
+            .trim();
+
+        if (searchValue === "" || title.includes(searchValue)) {
+
+            card.style.display = "";
+
+            if (searchValue !== "") {
+                recommendedFound = true;
+            }
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+    // ==========================
+    // NO RESULTS MESSAGES
+    // ==========================
+
+    if (searchValue === "") {
+
+        noResults.style.display = "none";
+        noWebResults.style.display = "none";
+        noRecommendedResults.style.display = "none";
+
     } else {
-      card.style.display = "none";
+
+        noResults.style.display =
+            movieFound ? "none" : "block";
+
+        noWebResults.style.display =
+            webFound ? "none" : "block";
+
+        noRecommendedResults.style.display =
+            recommendedFound ? "none" : "block";
+
     }
-  });
+
 });// ==========================
 // Favorite Buttons + LocalStorage
 // ==========================
