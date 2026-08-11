@@ -328,11 +328,11 @@ nav ul li a:hover {
   font-size: 18px;
 }
 
-.movie-container{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:30px;
-    justify-items:center;
+.movie-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px;
+    width: 100%;
 } /* ==========================
    MOVIE CARD
 ========================== */
