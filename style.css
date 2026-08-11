@@ -1314,3 +1314,12 @@ body::before {
     grid-column: 1 / -1;
     flex: 0 0 100%;
 }
+
+
+/* ==========================
+   ACTIVE NAVBAR LINK
+========================== */
+
+nav ul li a.active {
+    color: #e50914;
+}
